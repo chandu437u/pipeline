@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/chandu437u/java-.git'
+            }
+        }
+
+        stage('Compile Java Program') {
+            steps {
+                sh 'ls -l'
+                sh 'javac hello.java'
+            }
+        }
+
+        stage('Execute Application') {
+            steps {
+                sh 'java hello'
+            }
+        }
+    }
+}
